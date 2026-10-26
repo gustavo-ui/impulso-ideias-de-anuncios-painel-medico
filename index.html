@@ -2,310 +2,62 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<style>:root{color-scheme:light}img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Impulso+ Ideias de Anúncios</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Figtree:wght@400;500;600&display=swap">
 <style>
-/* Layout: cabeçalho fixo com 4 abas; anúncios em cartões de duas colunas (texto Impulso+ à esquerda, referência à direita) */
-:root{
-  --bg:#F3F6FC; --surface:#FFFFFF; --fg:#0E1A33; --muted:#56637F; --line:#DAE2F1;
-  --accent:#2F6FED; --accent-fg:#FFFFFF; --accent-soft:#E6EEFD; --warn-bg:#FFF4DB; --warn-fg:#6B4A00;
-  --font-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
-  --font-body:'Figtree','Segoe UI',system-ui,sans-serif;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0A111F; --surface:#111A2D; --fg:#E7EDFA; --muted:#93A1BE; --line:#223050;
-  --accent:#6C9BFF; --accent-fg:#0A111F; --accent-soft:#16264A; --warn-bg:#3A2E10; --warn-fg:#F2D48A; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0A111F; --surface:#111A2D; --fg:#E7EDFA; --muted:#93A1BE; --line:#223050;
-  --accent:#6C9BFF; --accent-fg:#0A111F; --accent-soft:#16264A; --warn-bg:#3A2E10; --warn-fg:#F2D48A; color-scheme:dark}
+:root{--bg:#F3F6FC;--surface:#FFFFFF;--fg:#0E1A33;--muted:#56637F;--line:#DAE2F1;--accent:#2F6FED;--accent-fg:#FFFFFF;--accent-soft:#E6EEFD}
+@media (prefers-color-scheme:dark){:root{--bg:#0A111F;--surface:#111A2D;--fg:#E7EDFA;--muted:#93A1BE;--line:#223050;--accent:#6C9BFF;--accent-fg:#0A111F;--accent-soft:#16264A;color-scheme:dark}}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--font-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
-.wrap{max-width:1120px;margin:0 auto}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
-.bar{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-block:10px}
-.brand{font:700 18px var(--font-display);letter-spacing:-.01em;white-space:nowrap}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 'Figtree','Segoe UI',system-ui,sans-serif;padding:0 16px}
+header{background:var(--surface);border-bottom:1px solid var(--line);margin:0 -16px;padding:10px 16px;position:sticky;top:0;z-index:5}
+.bar{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{font:700 18px 'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;white-space:nowrap}
 .brand b{color:var(--accent)}
 nav{display:flex;gap:4px;flex-wrap:wrap}
-nav button{font:500 14px var(--font-body);color:var(--muted);background:none;border:0;border-radius:8px;padding:8px 12px;cursor:pointer}
-nav button:hover{color:var(--fg);background:var(--accent-soft)}
-nav button[aria-current="true"]{color:var(--accent);background:var(--accent-soft);font-weight:600}
-button:focus-visible,a:focus-visible,video:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-main{padding-block:32px 72px}
-h1{font:700 clamp(28px,4.4vw,44px)/1.08 var(--font-display);letter-spacing:-.02em;margin:0 0 12px;text-wrap:balance;max-width:20ch}
-h2{font:700 clamp(22px,3vw,28px)/1.15 var(--font-display);letter-spacing:-.015em;margin:0 0 8px;text-wrap:balance}
-h3{font:700 18px/1.25 var(--font-display);margin:0 0 6px}
+nav a{font-weight:500;font-size:14px;color:var(--muted);text-decoration:none;border-radius:8px;padding:8px 12px}
+nav a.on{color:var(--accent);background:var(--accent-soft);font-weight:600}
+main{max-width:1120px;margin:0 auto;padding:32px 0 72px}
+.eyebrow{font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h2{font:700 clamp(22px,3vw,28px)/1.15 'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;margin:0 0 8px}
 .lead{color:var(--muted);max-width:62ch;margin:0 0 28px}
-.eyebrow{font:600 12px var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
-.view[hidden]{display:none}
-/* mapa */
-.map{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-bottom:36px}
-.groups{display:grid;gap:12px}
-.group{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.group h4{margin:0 0 8px;font:600 12px var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{font:500 14px var(--font-body);background:var(--accent-soft);color:var(--accent);border:0;border-radius:999px;padding:5px 12px;cursor:pointer}
-.chip:hover{filter:brightness(.96)}
-.arrow{font:700 28px var(--font-display);color:var(--accent)}
-.goal{background:var(--accent);color:var(--accent-fg);border-radius:14px;padding:22px}
-.goal b{font:700 22px/1.15 var(--font-display);display:block;margin-bottom:6px}
-.goal span{font-size:15px;opacity:.92}
-.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
-table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
-th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font:600 12px var(--font-body);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
-tr:last-child td{border-bottom:0}
-td:first-child{font-weight:600}
-.note{font-size:13px;color:var(--muted);margin-top:10px}
-/* anuncios */
-.list{display:grid;gap:24px}
-.ad{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.ad-main{padding:26px 28px;display:grid;gap:14px;align-content:start;min-width:0}
-.ad-ref{background:var(--accent-soft);padding:20px;border-left:1px solid var(--line);display:grid;gap:10px;align-content:start;min-width:0}
-.ad-ref figure{margin:0;display:grid;gap:10px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px)}
-.ad-ref img,.ad-ref video{width:100%;height:auto;border-radius:10px;display:block;background:#000;max-height:560px;object-fit:contain}
-.tag{font:600 12px var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.ad-top{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
-.num{font:700 14px var(--font-display);background:var(--accent);color:var(--accent-fg);border-radius:8px;padding:3px 10px}
-.mec{font-size:14px;color:var(--muted)}
-.headline{font:700 clamp(22px,2.6vw,28px)/1.15 var(--font-display);letter-spacing:-.015em;margin:0;text-wrap:balance}
+.ad{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:24px}
+.ad-main{flex:1 1 0;min-width:0;padding:26px 28px}
+.ad-main>*{margin:0 0 14px}
+.ad-ref{flex:0 0 340px;width:340px;background:var(--accent-soft);border-left:1px solid var(--line);padding:20px}
+.ad-ref img,.ad-ref video{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;border-radius:10px;margin:0 0 10px}
+.num{display:inline-block;font:700 14px 'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;background:var(--accent);color:var(--accent-fg);border-radius:8px;padding:3px 10px}
+.dur{color:var(--muted);font-size:14px;margin-left:10px}
+.sub{font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.headline{font:700 clamp(22px,2.6vw,28px)/1.15 'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;margin:0}
 mark{background:none;color:var(--accent)}
-.sub{font:600 12px var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
-.body{margin:0}
-ul.bul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
-ul.bul li{padding-left:22px;position:relative}
-ul.bul li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--accent)}
-.btn{display:inline-block;background:var(--accent);color:var(--accent-fg);font:600 15px var(--font-body);border-radius:999px;padding:9px 18px}
-.meta{display:grid;gap:10px;font-size:14px;color:var(--muted)}
-.meta b{color:var(--fg);font-weight:600}
-.copybox{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:8px;background:var(--bg)}
-.copybox .head{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.copybox pre{margin:0;font:inherit;white-space:pre-wrap;word-break:break-word}
-.copy{font:600 13px var(--font-body);color:var(--accent);background:var(--accent-soft);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
-.warn{background:var(--warn-bg);color:var(--warn-fg);border-radius:10px;padding:10px 14px;font-size:14px}
-.refcap{font-size:14px}
-.refcap b{display:block;font:600 12px var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
-.switch{display:flex;gap:6px}
-.switch button{font:600 13px var(--font-body);border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;padding:5px 10px;cursor:pointer}
-.switch button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
-/* canais */
-.canal{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 28px;display:grid;gap:18px}
-.canal-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
-.pill{font:600 12px var(--font-body);letter-spacing:.06em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:4px 12px}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:8px}
-ol.steps li{counter-increment:s;padding-left:34px;position:relative}
-ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font:700 13px/24px var(--font-display);text-align:center}
-.first{background:var(--accent-soft);border-radius:12px;padding:14px 16px}
-.first b{color:var(--accent)}
-.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.flow span{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-weight:500;font-size:14px}
-.flow i{font-style:normal;color:var(--accent);font-weight:700}
-.msg{border-left:3px solid var(--accent);padding:4px 0 4px 14px;margin:0;color:var(--fg)}
-.cta-box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:28px}
-@media (max-width:860px){
-  .ad{grid-template-columns:1fr}
-  .ad-ref{order:-1;border-left:0;border-bottom:1px solid var(--line)}
-  .ad-ref figure{position:static}
-  .ad-ref img,.ad-ref video{max-height:380px}
-  .ad-main,.canal{padding:20px 18px}
-  .map{grid-template-columns:1fr}
-  .arrow{transform:rotate(90deg);justify-self:center}
-}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+ul{margin:0;padding:0;list-style:none}
+li{padding-left:22px;position:relative;margin-bottom:6px}
+li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:2px;background:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-fg);font-weight:600;border-radius:999px;padding:9px 18px}
+.txt{white-space:pre-wrap;margin:0}
+.fala{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--bg)}
+@media (max-width:860px){.ad{flex-direction:column-reverse}.ad-ref{flex:none;width:auto;border-left:0;border-bottom:1px solid var(--line)}.ad-ref img,.ad-ref video{max-height:380px}.ad-main{padding:20px 18px}}
 </style>
-
 </head>
 <body>
-<header><div class="bar">
-  <div class="brand">Impulso<b>+</b> Ideias de anúncios</div>
-  <nav id="nav" aria-label="Seções"></nav>
-</div></header>
-<div class="wrap"><main id="app"></main></div>
-
-<script>
-const DATA = {"statics": [{"n": 1, "ref": "O preconceito com venda te faz trabalhar quase de graça", "mec": "", "bullets": ["Acompanhamento organizado em um só painel", "Dados do paciente chegando sozinhos", "Serviço mensal com valor claro"], "textos": [{"label": "", "text": "Entre uma consulta e outra, você responde mensagem, orienta exame e ajusta conduta. Fora do horário e sem cobrar.\n\nCom o Painel Médico da Impulso+, esse acompanhamento vira serviço mensal. A Band registra os dados do paciente, o Painel organiza e você acompanha.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Você já acompanha seus pacientes entre as consultas. E trabalha quase de graça."}], "destaque": "quase de graça", "corpo": "Mensagem fora do horário, dúvida sobre exame, ajuste de orientação. Esse trabalho é real e não aparece na conta. Com a Band e o Painel, ele vira serviço mensal.", "botao": "Quero destravar isso", "visual": "médico olhando o celular fora do consultório, Band no pulso de um paciente e tela do Painel ao lado."}, {"n": 2, "ref": "Seu consultório cresce quando o modelo muda, não quando a sua agenda aumenta", "mec": "", "bullets": ["Mais valor por paciente", "Receita recorrente", "Sem horas extras de consulta"], "textos": [{"label": "", "text": "Agenda cheia não é o mesmo que faturamento maior. Mais consultas avulsas pedem mais horas do seu dia.\n\nO acompanhamento mensal com a Band e o Painel Médico faz o mesmo paciente valer mais, sem ocupar mais agenda.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Seu faturamento cresce quando o modelo muda, não quando a agenda aumenta."}], "destaque": "o modelo muda", "corpo": "Mais consultas avulsas pedem mais horas do seu dia. Com acompanhamento mensal, o mesmo paciente passa a valer mais, sem ocupar mais agenda.", "botao": "Quero mudar meu modelo", "visual": "Band em destaque no pulso e tela do Painel com a lista de pacientes em acompanhamento."}, {"n": 3, "ref": "Tem ortopedista cobrando mais caro que você e lotando a agenda", "mec": "", "bullets": ["Evolução visível para o paciente", "Dados da Band no Painel", "Motivo claro para continuar"], "textos": [{"label": "", "text": "Alguns médicos mantêm o paciente por anos e cobram pelo acompanhamento todo mês. Nem sempre é um tratamento melhor. É um acompanhamento que o paciente consegue ver.\n\nCom a Band e o Painel Médico da Impulso+, os dados ficam organizados e a evolução fica visível para ele e para você.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Tem médico mantendo o paciente por anos e cobrando acompanhamento todo mês."}], "destaque": "por anos", "corpo": "Muitas vezes ele nem tem um tratamento melhor. Tem um acompanhamento que o paciente consegue ver.", "botao": "Quero ver como funciona", "visual": "paciente em rotina (treino ou trabalho) com a Band em destaque e o app mostrando o gráfico semanal."}, {"n": 4, "ref": "Por que tanto médico bom fatura tão pouco?", "mec": "", "bullets": ["Paciente acompanhado todo mês", "Dados reais da rotina dele", "Vínculo que não depende da agenda"], "textos": [{"label": "", "text": "O paciente é atendido, sai com a conduta na mão e some. Quase sempre falta uma coisa só: um motivo para continuar com você entre as consultas.\n\nA Band registra a rotina dele, o Painel Médico mostra para você, e o vínculo deixa de depender da próxima consulta.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Por que tanto médico bom perde o paciente depois da primeira consulta?"}], "destaque": "tanto médico bom", "corpo": "Quase sempre falta uma coisa só: um motivo para o paciente continuar com você entre as consultas.", "botao": "Descobrir como evitar", "visual": "médico pensativo de um lado, Band e tela do Painel do outro."}, {"n": 5, "ref": "Fale do seu trabalho sem parecer que está vendendo", "mec": "", "bullets": ["O dado do paciente fala por você", "Plano de ação visível para ele", "Sem pressão e sem desconto"], "textos": [{"label": "", "text": "Você não precisa convencer o paciente do valor do acompanhamento. Precisa mostrar.\n\nQuando ele vê o próprio sono, movimento e evolução organizados pelo Painel Médico, o valor fica claro sem discurso de venda e sem desconto.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Ofereça acompanhamento sem parecer que está vendendo."}], "destaque": "sem parecer que está vendendo", "corpo": "Quando o paciente vê os próprios dados, ele entende o valor sozinho. Você não precisa convencer. Precisa mostrar.", "botao": "Quero ver como funciona", "visual": "médico e paciente olhando juntos a tela do Painel, Band no pulso do paciente."}, {"n": 6, "ref": "Agenda cheia e faturamento parado? O problema é o seu modelo de negócio", "mec": "", "bullets": ["Receita recorrente por paciente", "Acompanhamento contínuo", "Mais previsibilidade no mês"], "textos": [{"label": "", "text": "Agenda cheia e faturamento parado costumam ter a mesma causa: o que a clínica vende. Consulta avulsa tem teto.\n\nCom a Band e o Painel Médico, a clínica passa a oferecer acompanhamento contínuo, e o mesmo paciente passa a gerar receita recorrente.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Agenda cheia e faturamento parado?"}], "destaque": "faturamento parado", "corpo": "O problema pode estar no que você vende. Consulta avulsa tem teto. Acompanhamento contínuo, com Band e Painel, abre muito mais espaço para crescer.", "botao": "Quero sair do teto", "visual": "médico coçando a cabeça olhando uma prancheta de um lado, Band e tela do Painel do outro."}, {"n": 7, "ref": "Você estudou anos para ser um grande médico. E para ter um grande tempo dedicou ao modelo de negócio?", "mec": "", "bullets": ["Band no pulso do paciente", "Painel Médico com dados organizados", "C.E.S.A.R. apoiando a rotina"], "textos": [{"label": "", "text": "Você estudou anos para diagnosticar e prescrever. Ninguém ensinou a acompanhar o paciente depois da consulta e transformar isso em serviço.\n\nA Impulso+ entrega a Band no pulso do paciente, o Painel Médico com os dados organizados e o C.E.S.A.R. apoiando a rotina entre as consultas.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Você estudou anos para ser um grande médico. E o que acontece depois da consulta?"}], "destaque": "depois da consulta", "corpo": "A faculdade ensinou a diagnosticar e prescrever. Ninguém ensinou a acompanhar o paciente entre as consultas e transformar isso em serviço.", "botao": "Quero conhecer o Painel", "visual": "fundo escuro, mesa de médico com livros, Band e tela do Painel em destaque."}, {"n": 8, "ref": "Você trava toda vez que o assunto vira preço", "mec": "", "bullets": ["Formato definido de acompanhamento", "Registro do que foi entregue", "Valor mensal fácil de explicar"], "textos": [{"label": "", "text": "Te ensinaram a cuidar bem do paciente. Ninguém ensinou a dar formato e valor ao cuidado contínuo.\n\nCom o Painel Médico, o acompanhamento ganha rotina, registro e um valor mensal fácil de explicar.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Você acompanha o paciente por mensagem e trava na hora de cobrar por isso."}], "destaque": "trava na hora de cobrar", "corpo": "Te ensinaram a cuidar bem. Ninguém ensinou a dar formato e valor ao cuidado contínuo. Com o Painel, o acompanhamento ganha rotina, registro e valor claros.", "botao": "Agendar demonstração", "visual": "médico no consultório olhando o computador, Band e tela do Painel em destaque."}, {"n": 9, "ref": "Cobre o que você vale, sem sentir culpa", "mec": "", "bullets": ["Cuidado entre consultas com formato", "Dados reais para sustentar o valor", "Serviço mensal claro"], "textos": [{"label": "", "text": "Você já acompanha o paciente entre as consultas. Cobrar por isso fica mais simples quando o serviço tem formato, dados e entrega clara.\n\nEm 30 minutos você vê como a Band e o Painel Médico transformam esse cuidado em serviço mensal.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Cobre pelo acompanhamento que você já faz, sem sentir culpa."}], "destaque": "sem sentir culpa", "corpo": "Em 30 minutos você vê como transformar o cuidado entre consultas em serviço mensal, com a Band e o Painel Médico.", "botao": "Quero participar", "visual": "médico sorrindo com paciente, painel de vidro fosco por cima com o texto, Band no pulso do paciente."}, {"n": 10, "ref": "Todo consultório precisa de um modelo de negócio. A pergunta é: o seu tem?", "mec": "", "bullets": ["Acompanhamento planejado", "Paciente que continua com você", "Mais previsibilidade para a clínica"], "textos": [{"label": "", "text": "Todo consultório tem consultas. A pergunta é se o seu tem recorrência.\n\nA Band e o Painel Médico dão estrutura ao acompanhamento: o paciente continua com você, e a clínica cresce com mais previsibilidade.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "", "text": "Todo consultório tem consultas. A pergunta é: o seu tem recorrência?"}], "destaque": "recorrência", "corpo": "Acompanhamento planejado, com Band e Painel, para o paciente continuar com você e a clínica crescer com previsibilidade.", "botao": "Quero ver como funciona", "visual": "retrato do médico em ambiente escuro, com Band e tela do Painel em destaque."}, {"n": 11, "ref": "Citação da Dra. Erica Mantelli com convite e data", "mec": "", "bullets": ["Demonstração de 30 minutos", "Band e Painel Médico ao vivo", "Sem compromisso"], "textos": [{"label": "", "text": "Em 30 minutos, [NOME] mostra como o seu consultório pode acompanhar cada paciente o ano inteiro, com a Band e o Painel Médico.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}], "notas": [], "titulos": [{"label": "entre aspas", "text": "Em 30 minutos, eu mostro como o seu consultório pode acompanhar cada paciente o ano inteiro."}], "assinatura": "[NOME REAL E CARGO DE QUEM FALA]", "botao": "Quero a demonstração com [NOME]", "visual": "foto real da pessoa, Band no pulso e tela do Painel ao lado."}, {"n": 12, "ref": "Mais de 1.000 médicos já quebraram esse tabu", "mec": "", "bullets": ["Paciente acompanhado entre consultas", "Dados reais no Painel", "Serviço mensal"], "textos": [{"label": "versão com número", "text": "[NÚMERO REAL] médicos e clínicas já acompanham o paciente além da consulta com a Impulso+. Todos começaram achando que o WhatsApp bastava.\n\nHoje a Band registra, o Painel Médico organiza e eles acompanham.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos."}, {"label": "versão sem número", "text": "Quem acompanha o paciente entre as consultas não perde ele depois da primeira. O WhatsApp ajuda, mas não escala.\n\nCom a Band e o Painel Médico da Impulso+, o acompanhamento ganha dados e rotina.\n\nToque no botão abaixo e agende uma demonstração de 30 minutos.\n\n================================================================"}], "notas": [], "titulos": [{"label": "versão com número", "text": "[NÚMERO REAL] médicos já acompanham o paciente além da consulta."}, {"label": "versão sem número", "text": "Quem acompanha o paciente entre as consultas não perde ele depois da primeira."}], "corpo": "Todos começaram achando que o WhatsApp bastava.", "botao": "Quero fazer parte", "visual": "fundo escuro, Band e tela do Painel em destaque."}], "videos": [{"n": 1, "nome": "A CONTA NÃO FECHA", "dur": "40 segundos", "ref": "médico na mesa com folha de papel. Faz a conta do que cobra por hora (\"se eu cobrasse 5 vezes menos, teria que trabalhar 5 vezes mais, a conta não fecha\"), antecipa a objeção de estar cobrando caro e mostra que outra pessoa lucra em cima do trabalho dele.", "mec": "", "secoes": [{"label": "Cena", "text": "médico sentado na mesa, folha de papel, caneta. Câmera fixa, com cortes em close no papel."}, {"label": "Fala", "text": "\"Pessoal, quero fazer uma conta com vocês.\"\n(escreve) \"Consulta de 600 reais, duas vezes por ano, durante três anos. Três mil e seiscentos.\"\n\"E o acompanhamento que você faz entre as consultas? Mensagem, exame, ajuste de conduta. Ele não entra na conta. Vale zero.\"\n\"Você pode pensar: será que o meu paciente paga por acompanhamento? Ele já usa relógio e aplicativo por conta própria, mas ninguém interpreta aquele dado. Quando é o médico que acompanha, o dado ganha sentido.\"\n(escreve) \"Com o Painel Médico da Impulso+: cento e cinquenta reais por mês, doze meses, três anos. Cinco mil e quatrocentos.\"\n\"O mesmo paciente passa de três mil e seiscentos para nove mil.\"\n\"Toque no botão abaixo e agende uma demonstração de 30 minutos.\""}, {"label": "Texto na tela", "text": "\"R$ 3.600\", depois \"+ R$ 5.400\", depois \"= R$ 9.000\", com \"valores ilustrativos\" fixo no rodapé."}, {"label": "Gancho dos 3 primeiros segundos", "text": "\"quero fazer uma conta com vocês\" com o papel já na mesa."}]}, {"n": 2, "nome": "QUEBRA DE OBJEÇÃO", "dur": "35 segundos", "ref": "dupla conversando. O médico diz \"meu consultório já funciona, já atendo particular e já faturo bem, como a mentoria pode me ajudar?\". A resposta é \"você já resolveu o problema mais difícil, mas esse modelo tem um teto, você está vendendo as suas horas\". Fecha convidando para uma reunião estratégica, com \"Clique aqui e saiba mais\".", "mec": "", "secoes": [{"label": "Cena", "text": "duas pessoas da Impulso+ em pé, conversando para a câmera. Um faz o papel do médico cético."}, {"label": "Fala", "text": "Médico: \"Meu consultório já funciona. Eu já acompanho meus pacientes pelo WhatsApp. Como o Painel pode me ajudar?\"\nResposta: \"Você já resolveu a parte mais difícil, que é criar vínculo com o paciente.\"\n\"Mas acompanhar por WhatsApp tem um teto. Depende do seu tempo e da memória do paciente.\"\n\"A Band registra os dados dele, o Painel organiza, e o acompanhamento deixa de depender de você lembrar de cada um.\"\n\"Se você quer ver onde está o gargalo do seu acompanhamento, agende uma demonstração de 30 minutos.\"\n\"Toque no botão abaixo.\""}, {"label": "Tela final", "text": "\"Toque no botão abaixo e agende uma demonstração de 30 minutos.\""}]}, {"n": 3, "nome": "O QUE VOCÊ COBRA COMUNICA VALOR", "dur": "30 segundos", "ref": "palestrante no palco com legendas grandes. \"O preço que você cobra revela o que você vale\", \"vender não é vender banana, é comunicar valor\", e o médico que já comunica valor de graça faz o paciente imaginar quanto seria pagar por ele.", "mec": "", "secoes": [{"label": "Cena", "text": "Médico ou pessoa da Impulso+ em pé, com uma lousa atrás, falando para a câmera. Câmera se aproximando devagar."}, {"label": "Fala", "text": "\"O que você cobra comunica o que você vale. E o que você não cobra também.\"\n\"Quando você acompanha o paciente de graça, está dizendo que acompanhamento não vale nada.\"\n\"Cobrar por acompanhamento não é vender. É mostrar valor.\"\n\"Quando o paciente vê o próprio sono, o movimento e a evolução organizados pelo médico dele, ele entende sozinho quanto isso vale.\"\n\"A Band registra. O Painel mostra. Você acompanha.\"\n\"Toque no botão abaixo e agende uma demonstração de 30 minutos.\""}]}, {"n": 4, "nome": "LEVANTA A MÃO", "dur": "35 segundos", "ref": "palestrante com dados de mercado no telão (72% dos médicos não recomendam a medicina aos filhos, 62% já passaram por burnout), legenda vermelha de destaque e perguntas para a plateia (\"quem aqui acha que entrega mais do que ganha, levanta a mão\").", "mec": "", "secoes": [{"label": "Cena", "text": "Apresentador olhando direto para a câmera, com uma lousa atrás, falando com o médico que assiste. Conceito: convidar quem assiste a levantar a mão."}, {"label": "Fala", "text": "\"Levanta a mão quem responde paciente fora do horário.\"\n(pausa, olhando para a câmera)\n\"Agora levanta a mão quem cobra por isso.\"\n(pausa, olhando para a câmera)\n\"Esse é o acompanhamento que funciona de graça.\"\n\"Com o Painel Médico, o que você já faz vira serviço mensal, com dado, rotina e registro.\"\n\"Toque no botão abaixo e agende uma demonstração de 30 minutos.\""}]}, {"n": 5, "nome": "CONVITE PARA VOCÊ E SUA EQUIPE", "dur": "20 segundos", "ref": "apresentadora com microfone em evento, convidando para a imersão em data fixa e pedindo para levar amigos e o time.", "mec": "", "secoes": [{"label": "Cena", "text": "pessoa da Impulso+ olhando para a câmera, em ambiente de clínica ou escritório."}, {"label": "Fala", "text": "\"Você sabe o quanto a sua clínica depende de você para acompanhar cada paciente.\"\n\"Chame o seu sócio ou a sua equipe e veja o Painel Médico funcionando em 30 minutos.\"\n\"Toque no botão abaixo e agende uma demonstração de 30 minutos.\""}]}, {"n": 6, "nome": "POV DO PAINEL", "dur": "10 segundos", "ref": "vídeo de 10s em evento, \"POV: você viveu o MedGest PRO e nunca mais enxergou sua carreira médica da mesma forma\". Sem fala, só texto fixo e cortes.", "mec": "", "secoes": [{"label": "Texto fixo na tela", "text": "\"POV: você viu o Painel Médico e nunca mais enxergou o pós-consulta da mesma forma.\""}, {"label": "Cortes (sem fala, com música)", "text": "1. Paciente correndo ou treinando com a Band no pulso\n2. Tela do Painel com o Score de Saúde\n3. Médico lendo o histórico antes de receber o paciente\n4. Médico e paciente olhando a tela juntos\n5. Tela final com botão: \"Agende uma demonstração de 30 minutos\"\n\nUsar só telas reais do produto, com o rodapé \"Telas reais do produto · dados de demonstração\"."}]}, {"n": 7, "nome": "DEPOIMENTO DE MÉDICO", "dur": "30 segundos", "ref": "médico mentorado, em evento, se apresenta (nome, especialidade, cidade), diz por que está ali e o que mudou na forma de atender (\"não é só a consulta, mas ter um acompanhamento completo\") e fecha com uma frase de transformação.", "mec": "", "secoes": [{"label": "Cena", "text": "médico cliente da Impulso+ no próprio consultório, câmera na altura dos olhos."}, {"label": "Roteiro de entrevista (as respostas devem ser reais, não escritas por nós)", "text": "1. Quem é você e onde atende?\n2. Como era o acompanhamento dos seus pacientes antes?\n3. O que mudou depois que você passou a usar a Band e o Painel?\n4. O que seus pacientes comentaram?\n5. Para que tipo de médico você indicaria?"}, {"label": "Edição", "text": "cortar as melhores 3 frases, legenda destacando a frase mais forte, fechar com\n\"Toque no botão abaixo e agende uma demonstração de 30 minutos.\""}]}]};
-const VIEWS = [
-  {id:'estaticos', label:'Anúncios estáticos'},
-  {id:'videos', label:'Anúncios em vídeo'}
-];
-/* video de referencia usado em cada roteiro (ordem dos arquivos enviados) */
-const VIDEO_REFS = {
-  1:[{f:'v5',t:'Médico faz a conta na mesa e responde à objeção do preço'}],
-  2:[{f:'v2',t:'Dupla conversando: "meu consultório já funciona", resposta: "esse modelo tem um teto"'}],
-  3:[{f:'v1',t:'O preço revela o valor: comunicar valor não é vender'}],
-  4:[{f:'v8',t:'Apresentador com dado de mercado na tela e pergunta para a plateia'}],
-  5:[{f:'v3',t:'Convite em evento, com data e "traga seus amigos"'},{f:'v4',t:'Segundo convite, mesmo formato'}],
-  6:[{f:'v6',t:'POV de 10 segundos, sem fala, só texto fixo e cortes'}],
-  7:[{f:'v7',t:'Médico mentorado se apresenta e conta o que mudou'}]
-};
-const CANAIS = [
- {id:'eventos', nome:'Mini-eventos no escritório', tipo:'Presencial',
-  ideia:'Encontros pequenos, com poucos médicos por vez, em torno de um tema prático: como montar um plano de acompanhamento no consultório. A Band e o Painel são apresentados ao vivo e a venda acontece ali.',
-  passos:['Definir tema e data (ex.: "Como montar seu plano de acompanhamento")','Convidar pela base, pelo tráfego pago e pela prospecção ativa','Inscrição por formulário, que já captura nome, WhatsApp e e-mail','No evento: conteúdo, demonstração do Painel com a Band no pulso e conversa aberta','Oferta de lançamento para quem fecha no dia e demo individual para os demais','Follow-up em até 24 horas com quem veio e com quem faltou'],
-  precisa:['Espaço no escritório e roteiro fixo de 45 a 60 minutos','Band e Painel de demonstração prontos','Lista de presença e CRM para registrar o follow-up'],
-  medir:['Inscritos e comparecimento','Demonstrações agendadas depois do evento','Bands vendidas no evento e em até 7 dias','Custo por médico presente'],
-  primeiro:'Marcar o primeiro encontro para daqui a 30 dias e abrir as inscrições com um anúncio e uma mensagem para a base.'},
- {id:'patrocinio', nome:'Patrocínio de eventos para médicos', tipo:'Presencial',
-  ideia:'Patrocinar congressos e encontros que reúnem médicos, negociando uma palestra no palco e um estande com a Band para teste na hora.',
-  passos:['Mapear eventos do próximo semestre por especialidade, porte e público','Priorizar os que reúnem médicos que acompanham pacientes crônicos','Pedir mídia kit e negociar uma cota que inclua palestra de 15 a 20 minutos','Palestra sem discurso de venda: o que acontece com o paciente depois da consulta','Estande com demonstração rápida e QR code para a página de agendamento','Follow-up em até 48 horas com todo mundo que passou pelo estande'],
-  precisa:['Palestrante da Impulso+ ou médico parceiro','Material de estande e Band para demonstração','QR code com origem rastreada por evento'],
-  medir:['Leads captados por evento','Demonstrações agendadas por evento','Custo por lead comparado ao tráfego pago'],
-  primeiro:'Levantar 10 eventos do próximo semestre, pedir os mídia kits e comparar custo da cota com o número de médicos esperado.'},
- {id:'embaixadores', nome:'Embaixadores da marca', tipo:'Parceria',
-  ideia:'Um grupo pequeno de médicos escolhidos usa a Band com seus pacientes, mostra o resultado para os colegas e indica a Impulso+.',
-  passos:['Definir critérios: já acompanha pacientes, boa reputação, influência entre colegas','Convidar cada médico individualmente, sem convite em massa','Combinar por escrito o que ele recebe (condições especiais, acesso antecipado, comissão por indicação a definir)','Entregar link próprio de indicação, material pronto e acesso ao time','Produzir conteúdo real com ele: depoimento, bastidores e caso de uso','Reunião mensal para ouvir feedback e ajustar o programa'],
-  precisa:['Regras do programa e contrato simples','Link de indicação rastreado por médico','Depoimentos reais e autorizados'],
-  medir:['Indicações por embaixador','Demonstrações e vendas vindas de indicação','Conteúdo publicado e alcance entre médicos'],
-  primeiro:'Listar 10 médicos que já conhecem o produto, escolher 3 para o piloto e conversar com cada um.',
-  cuidado:'Depoimento precisa ser real, autorizado e sem promessa de resultado.'},
- {id:'infoprodutores', nome:'Parceria com infoprodutores', tipo:'Parceria',
-  ideia:'Três parceiros que já ensinam médicos (cursos, mentorias, comunidades) vendem a Band para a própria base e recebem comissão, como afiliados dentro do ecossistema deles.',
-  passos:['Listar infoprodutores com público médico e afinidade com acompanhamento','Apresentar a proposta: comissão por venda, com percentual a definir','Entregar kit pronto: copy, anúncios, página e demonstração','Ação conjunta: aula ou live sobre acompanhamento como fonte de receita','Link rastreado por parceiro, com relatório de vendas','Pagamento de comissão em data fixa e revisão mensal da parceria'],
-  precisa:['Contrato de afiliação com regras de comunicação','Link e cupom rastreados por parceiro','Relatório simples de vendas por parceiro'],
-  medir:['Vendas por parceiro','Custo de aquisição efetivo (comissão sobre venda)','Taxa de agendamento de quem chega pela base do parceiro'],
-  primeiro:'Escolher 3 infoprodutores, marcar uma conversa com cada um e levar a proposta de comissão numa página.'},
- {id:'prospeccao', nome:'Prospecção ativa', tipo:'Ativo',
-  ideia:'A equipe entra em contato com médicos que já demonstraram interesse: seguiu a página, curtiu uma postagem, comentou ou respondeu um story. Também entram quem fez o quiz e não agendou.',
-  passos:['Montar a lista diária de novos seguidores e de quem interagiu','Qualificar rápido: é médico, atende particular, acompanha paciente?','Enviar uma primeira mensagem curta, sem oferta','Se responder, convidar para a demonstração de 30 minutos','Sem resposta: no máximo 2 retornos, com intervalo de alguns dias','Registrar tudo no CRM e parar se a pessoa pedir'],
-  mensagens:['Oi, Dr(a). [Nome], vi que você começou a seguir a Impulso+. Posso te perguntar como você acompanha seus pacientes hoje entre uma consulta e outra?','Oi, Dr(a). [Nome], vi que você curtiu nosso post sobre acompanhamento. Se quiser, mostro em 30 minutos como o Painel Médico funciona. Te envio o link para escolher um horário?'],
-  precisa:['Pessoa dedicada por algumas horas por dia','CRM com origem do contato (seguiu, curtiu, quiz)','Roteiro de mensagens aprovado'],
-  medir:['Contatos feitos e respostas','Demonstrações agendadas por 100 contatos','Tempo entre a interação e o primeiro contato'],
-  primeiro:'Definir quem faz a lista diária e rodar uma semana de teste com os seguidores médicos que já existem.',
-  cuidado:'Seguir as regras da plataforma e a LGPD, e encerrar o contato quando a pessoa recusar.'},
- {id:'conteudo', nome:'Conteúdo exclusivo para médicos', tipo:'Orgânico e pago',
-  ideia:'Posts feitos só para médicos, impulsionados para trazer seguidores médicos. Quem segue entra direto na prospecção ativa, formando um funil próprio.',
-  fluxo:['Post para médicos, impulsionado','Seguidor médico','Contato da equipe','Demonstração de 30 min','Band e Painel'],
-  passos:['Criar posts com temas do dia a dia do médico: acompanhamento, receita recorrente, rotina depois da consulta, bastidores do Painel','Impulsionar com público de médicos e profissionais da saúde, com objetivo de seguidores e engajamento','Todo dia, pegar quem seguiu ou interagiu e passar para a lista da prospecção ativa','Mensagem de boas-vindas com uma pergunta sobre o acompanhamento dele','Convite para a demonstração ou para o próximo mini-evento','Remarketing em anúncio para quem interagiu e ainda não agendou'],
-  precisa:['Calendário de posts exclusivos para médicos','Orçamento separado para impulsionar seguidores','Integração com a lista da prospecção ativa'],
-  medir:['Seguidores médicos novos por semana','Custo por seguidor médico','Seguidores que viram conversa e depois demonstração'],
-  primeiro:'Produzir 4 posts para médicos, impulsionar o melhor e ligar o resultado à lista diária da prospecção.'}
-];
-const COMPARA = [
- ['Tráfego pago (captação)','Pago','Rápida','Média','Variável, conforme verba'],
- ['Conteúdo exclusivo para médicos','Orgânico e pago','Média','Média','Baixo a médio'],
- ['Prospecção ativa','Ativo','Rápida','Alta (tempo da equipe)','Baixo'],
- ['Mini-eventos no escritório','Presencial','Média','Alta','Baixo a médio'],
- ['Embaixadores','Parceria','Lenta','Média','Baixo (comissão por indicação)'],
- ['Parceria com infoprodutores','Parceria','Média','Média','Comissão sobre venda'],
- ['Patrocínio de eventos','Presencial','Média','Alta','Alto']
-];
-
-const h = (tag, attrs, ...kids) => {
-  const e = document.createElement(tag);
-  for (const [k,v] of Object.entries(attrs||{})) {
-    if (k==='class') e.className=v; else if (k==='text') e.textContent=v;
-    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k,v);
-  }
-  for (const c of kids.flat()) if (c!=null) e.append(c.nodeType? c : document.createTextNode(c));
-  return e;
-};
-const copy = async (text, btn) => {
-  const old = btn.textContent;
-  try { await navigator.clipboard.writeText(text); btn.textContent='Copiado'; }
-  catch(e) { const r=document.createRange(); r.selectNodeContents(btn.closest('.copybox').querySelector('pre')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Texto selecionado'; }
-  setTimeout(()=>btn.textContent=old,1600);
-};
-const copybox = (label, text) => h('div',{class:'copybox'},
-  h('div',{class:'head'}, h('span',{class:'sub',style:'margin:0',text:label}), h('button',{class:'copy',type:'button',text:'Copiar',onclick:e=>copy(text,e.currentTarget)})),
-  h('pre',{text}));
-const hl = (text, part) => { const i = part ? text.indexOf(part) : -1; return i<0 ? [text] : [text.slice(0,i), h('mark',{text:part}), text.slice(i+part.length)]; };
-
-function staticCard(d){
-  const t = d.titulos[0];
-  const refImg = h('img',{src:`ref/e${String(d.n).padStart(2,'0')}.jpg`,alt:`Anúncio de referência: ${d.ref}`,loading:'lazy',width:480,height:600});
-  const main = h('div',{class:'ad-main'},
-    h('div',{class:'ad-top'}, h('span',{class:'num',text:`Anúncio ${d.n}`})),
-    h('div',{}, h('p',{class:'sub',text:'Título'}), h('p',{class:'headline'}, ...hl(t.text, d.destaque)),
-      d.titulos[1]? h('p',{class:'mec',style:'margin-top:8px'},`Alternativa (${d.titulos[1].label}): ${d.titulos[1].text}`):null),
-    d.assinatura? h('p',{class:'body'},`Assinatura: ${d.assinatura}`):null,
-    d.corpo? h('div',{}, h('p',{class:'sub',text:'Corpo'}), h('p',{class:'body',text:d.corpo})):null,
-    d.bullets.length? h('div',{}, h('p',{class:'sub',text:'Bullets'}), h('ul',{class:'bul'}, d.bullets.map(b=>h('li',{text:b})))):null,
-    h('div',{}, h('span',{class:'btn',text:d.botao})),
-    d.notas.map(n=>h('div',{class:'warn',text:n})));
-  const ref = h('div',{class:'ad-ref'}, h('figure',{}, refImg));
-  return h('article',{class:'ad',id:`e${d.n}`}, main, ref);
-}
-function videoCard(d){
-  const refs = VIDEO_REFS[d.n];
-  const figure = h('figure',{});
-  const show = i => {
-    const r = refs[i]; figure.replaceChildren();
-    const v = h('video',{controls:'',preload:'none',playsinline:'',poster:`ref/${r.f}.jpg`,src:`ref/${r.f}.mp4`});
-    figure.append(v);
-    if (refs.length>1) figure.append(h('div',{class:'switch'}, refs.map((_,j)=>h('button',{type:'button','aria-pressed':String(j===i),text:`Referência ${j+1}`,onclick:()=>show(j)}))));
-  };
-  show(0);
-  const main = h('div',{class:'ad-main'},
-    h('div',{class:'ad-top'}, h('span',{class:'num',text:`Vídeo ${d.n}`}), h('span',{class:'mec',text:d.dur})),
-    h('h3',{class:'headline',text:d.nome[0]+d.nome.slice(1).toLowerCase()}),
-    d.secoes.map(s=>{
-      const warn = s.label==='Preencher';
-      if (warn) return h('div',{class:'warn',text:s.text});
-      if (s.label==='Fala') return copybox('Fala', s.text);
-      return h('div',{}, h('p',{class:'sub',text:s.label.replace(/\s*\(.*\)/,'')}), h('p',{class:'body',style:'white-space:pre-wrap',text:s.text}));
-    }));
-  return h('article',{class:'ad',id:`v${d.n}`}, main, h('div',{class:'ad-ref'}, figure));
-}
-function canalCard(c){
-  return h('article',{class:'canal',id:c.id},
-    h('div',{class:'canal-head'}, h('h2',{text:c.nome}), h('span',{class:'pill',text:c.tipo})),
-    h('p',{class:'body',style:'margin:0;max-width:70ch',text:c.ideia}),
-    c.fluxo? h('div',{class:'flow'}, c.fluxo.flatMap((f,i)=> i? [h('i',{text:'›'}), h('span',{text:f})] : [h('span',{text:f})])):null,
-    h('div',{class:'cols'},
-      h('div',{}, h('p',{class:'sub',text:'Como funciona'}), h('ol',{class:'steps'}, c.passos.map(p=>h('li',{text:p})))),
-      h('div',{}, h('p',{class:'sub',text:'O que precisa'}), h('ul',{class:'bul'}, c.precisa.map(p=>h('li',{text:p}))),
-        h('p',{class:'sub',style:'margin-top:16px',text:'O que medir'}), h('ul',{class:'bul'}, c.medir.map(p=>h('li',{text:p}))))),
-    c.mensagens? h('div',{}, h('p',{class:'sub',text:'Exemplos de primeira mensagem'}), h('div',{style:'display:grid;gap:10px'}, c.mensagens.map(m=>h('p',{class:'msg',text:m})))):null,
-    c.cuidado? h('div',{class:'warn',text:c.cuidado}):null,
-    h('div',{class:'first'}, h('b',{text:'Primeiro passo: '}), c.primeiro));
-}
-const go = id => { if (location.hash !== '#'+id) location.hash = id; else render(); };
-function visao(){
-  const sec = h('section',{class:'view'},
-    h('p',{class:'eyebrow',text:'Plano de aquisição'}),
-    h('h1',{text:'Todos os caminhos levam à demonstração de 30 minutos'}),
-    h('p',{class:'lead',text:'O tráfego pago é um canal. Esta página reúne as ideias de anúncio, com a referência ao lado de cada uma, e os outros canais para trazer médicos até a demonstração do Painel Clínico e vender a Band.'}),
-    h('div',{class:'map'},
-      h('div',{class:'groups'},
-        [['Pago',[['Tráfego pago','estaticos'],['Conteúdo para médicos','canais#conteudo']]],
-         ['Presencial',[['Mini-eventos','canais#eventos'],['Patrocínio de eventos','canais#patrocinio']]],
-         ['Parcerias',[['Embaixadores','canais#embaixadores'],['Infoprodutores','canais#infoprodutores']]],
-         ['Ativo',[['Prospecção ativa','canais#prospeccao']]]].map(([g,items])=>h('div',{class:'group'}, h('h4',{text:g}), h('div',{class:'chips'}, items.map(([l,t])=>h('button',{class:'chip',type:'button',text:l,onclick:()=>{ const [v,a]=t.split('#'); go(a||v); if(a) setTimeout(()=>document.getElementById(a)?.scrollIntoView({behavior:'smooth'}),30); }})))))),
-      h('div',{class:'arrow',text:'›'}),
-      h('div',{class:'goal'}, h('b',{text:'Demonstração de 30 minutos'}), h('span',{text:'Agendada pelo Calendly. Quem não agenda recebe contato manual da equipe. Depois da demo: Band no pulso do paciente e Painel Médico no consultório.'}))),
-    h('h2',{text:'Comparativo rápido dos canais'}),
-    h('div',{class:'tbl'}, h('table',{}, h('thead',{}, h('tr',{}, ['Canal','Tipo','Velocidade dos primeiros leads','Esforço da equipe','Investimento'].map(x=>h('th',{text:x})))),
-      h('tbody',{}, COMPARA.map(r=>h('tr',{}, r.map(c=>h('td',{text:c}))))))),
-    h('p',{class:'note',text:'Estimativa qualitativa para orientar a ordem de teste. Os números reais saem do primeiro mês de cada canal.'}));
-  return sec;
-}
-function estaticos(){
-  return h('section',{class:'view'}, h('p',{class:'eyebrow',text:'Tráfego pago'}), h('h2',{text:'Anúncios estáticos'}),
-    h('p',{class:'lead',text:'Cada anúncio mantém o mecanismo de uma referência que já funciona e reescreve a mensagem para o acompanhamento entre consultas, com a Band e o Painel Médico.'}),
-    h('div',{class:'list'}, DATA.statics.map(staticCard)));
-}
-function videos(){
-  return h('section',{class:'view'}, h('p',{class:'eyebrow',text:'Tráfego pago'}), h('h2',{text:'Anúncios em vídeo'}),
-    h('p',{class:'lead',text:'Roteiros adaptados das falas dos vídeos de referência. Toque no vídeo ao lado para ver como o original funciona.'}),
-    h('div',{class:'list'}, DATA.videos.map(videoCard)));
-}
-function canais(){
-  return h('section',{class:'view'}, h('p',{class:'eyebrow',text:'Além do tráfego pago'}), h('h2',{text:'Outros canais de aquisição'}),
-    h('p',{class:'lead',text:'Seis canais para testar em paralelo ao tráfego pago. Cada um tem o passo a passo, o que precisa, o que medir e o primeiro passo.'}),
-    h('div',{class:'list'}, CANAIS.map(canalCard)));
-}
-const RENDER = {estaticos, videos};
-function render(){
-  const id = (location.hash||'').slice(1);
-  const view = RENDER[id] ? id : 'estaticos';
-  document.getElementById('nav').replaceChildren(...VIEWS.map(v=>h('button',{type:'button','aria-current':String(v.id===view),text:v.label,onclick:()=>{location.hash=v.id; scrollTo(0,0)}})));
-  document.getElementById('app').replaceChildren(RENDER[view]());
-}
-addEventListener('hashchange', render);
-render();
-</script>
+<header><div class="bar"><div class="brand">Impulso<b>+</b> Ideias de anúncios</div><nav><a href="index.html" class=on>Anúncios estáticos</a><a href="videos.html">Anúncios em vídeo</a></nav></div></header>
+<main>
+<p class="eyebrow">Tráfego pago</p>
+<h2>Anúncios estáticos</h2>
+<p class="lead">Cada anúncio mantém o mecanismo de uma referência que já funciona e reescreve a mensagem para o acompanhamento entre consultas, com a Band e o Painel Médico.</p>
+<article class="ad" id="e1"><div class="ad-main"><div><span class="num">Anúncio 1</span></div><div><p class="sub">Título</p><p class="headline">Você já acompanha seus pacientes entre as consultas. E trabalha <mark>quase de graça</mark>.</p></div><div><p class="sub">Corpo</p><p style="margin:0">Mensagem fora do horário, dúvida sobre exame, ajuste de orientação. Esse trabalho é real e não aparece na conta. Com a Band e o Painel, ele vira serviço mensal.</p></div><div><p class="sub">Bullets</p><ul><li>Acompanhamento organizado em um só painel</li><li>Dados do paciente chegando sozinhos</li><li>Serviço mensal com valor claro</li></ul></div><div><span class="btn">Quero destravar isso</span></div></div><div class="ad-ref"><img src="ref/e01.jpg" alt="Referência do anúncio 1" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e2"><div class="ad-main"><div><span class="num">Anúncio 2</span></div><div><p class="sub">Título</p><p class="headline">Seu faturamento cresce quando <mark>o modelo muda</mark>, não quando a agenda aumenta.</p></div><div><p class="sub">Corpo</p><p style="margin:0">Mais consultas avulsas pedem mais horas do seu dia. Com acompanhamento mensal, o mesmo paciente passa a valer mais, sem ocupar mais agenda.</p></div><div><p class="sub">Bullets</p><ul><li>Mais valor por paciente</li><li>Receita recorrente</li><li>Sem horas extras de consulta</li></ul></div><div><span class="btn">Quero mudar meu modelo</span></div></div><div class="ad-ref"><img src="ref/e02.jpg" alt="Referência do anúncio 2" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e3"><div class="ad-main"><div><span class="num">Anúncio 3</span></div><div><p class="sub">Título</p><p class="headline">Tem médico mantendo o paciente <mark>por anos</mark> e cobrando acompanhamento todo mês.</p></div><div><p class="sub">Corpo</p><p style="margin:0">Muitas vezes ele nem tem um tratamento melhor. Tem um acompanhamento que o paciente consegue ver.</p></div><div><p class="sub">Bullets</p><ul><li>Evolução visível para o paciente</li><li>Dados da Band no Painel</li><li>Motivo claro para continuar</li></ul></div><div><span class="btn">Quero ver como funciona</span></div></div><div class="ad-ref"><img src="ref/e03.jpg" alt="Referência do anúncio 3" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e4"><div class="ad-main"><div><span class="num">Anúncio 4</span></div><div><p class="sub">Título</p><p class="headline">Por que <mark>tanto médico bom</mark> perde o paciente depois da primeira consulta?</p></div><div><p class="sub">Corpo</p><p style="margin:0">Quase sempre falta uma coisa só: um motivo para o paciente continuar com você entre as consultas.</p></div><div><p class="sub">Bullets</p><ul><li>Paciente acompanhado todo mês</li><li>Dados reais da rotina dele</li><li>Vínculo que não depende da agenda</li></ul></div><div><span class="btn">Descobrir como evitar</span></div></div><div class="ad-ref"><img src="ref/e04.jpg" alt="Referência do anúncio 4" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e5"><div class="ad-main"><div><span class="num">Anúncio 5</span></div><div><p class="sub">Título</p><p class="headline">Ofereça acompanhamento <mark>sem parecer que está vendendo</mark>.</p></div><div><p class="sub">Corpo</p><p style="margin:0">Quando o paciente vê os próprios dados, ele entende o valor sozinho. Você não precisa convencer. Precisa mostrar.</p></div><div><p class="sub">Bullets</p><ul><li>O dado do paciente fala por você</li><li>Plano de ação visível para ele</li><li>Sem pressão e sem desconto</li></ul></div><div><span class="btn">Quero ver como funciona</span></div></div><div class="ad-ref"><img src="ref/e05.jpg" alt="Referência do anúncio 5" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e6"><div class="ad-main"><div><span class="num">Anúncio 6</span></div><div><p class="sub">Título</p><p class="headline">Agenda cheia e <mark>faturamento parado</mark>?</p></div><div><p class="sub">Corpo</p><p style="margin:0">O problema pode estar no que você vende. Consulta avulsa tem teto. Acompanhamento contínuo, com Band e Painel, abre muito mais espaço para crescer.</p></div><div><p class="sub">Bullets</p><ul><li>Receita recorrente por paciente</li><li>Acompanhamento contínuo</li><li>Mais previsibilidade no mês</li></ul></div><div><span class="btn">Quero sair do teto</span></div></div><div class="ad-ref"><img src="ref/e06.jpg" alt="Referência do anúncio 6" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e7"><div class="ad-main"><div><span class="num">Anúncio 7</span></div><div><p class="sub">Título</p><p class="headline">Você estudou anos para ser um grande médico. E o que acontece <mark>depois da consulta</mark>?</p></div><div><p class="sub">Corpo</p><p style="margin:0">A faculdade ensinou a diagnosticar e prescrever. Ninguém ensinou a acompanhar o paciente entre as consultas e transformar isso em serviço.</p></div><div><p class="sub">Bullets</p><ul><li>Band no pulso do paciente</li><li>Painel Médico com dados organizados</li><li>C.E.S.A.R. apoiando a rotina</li></ul></div><div><span class="btn">Quero conhecer o Painel</span></div></div><div class="ad-ref"><img src="ref/e07.jpg" alt="Referência do anúncio 7" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e8"><div class="ad-main"><div><span class="num">Anúncio 8</span></div><div><p class="sub">Título</p><p class="headline">Você acompanha o paciente por mensagem e <mark>trava na hora de cobrar</mark> por isso.</p></div><div><p class="sub">Corpo</p><p style="margin:0">Te ensinaram a cuidar bem. Ninguém ensinou a dar formato e valor ao cuidado contínuo. Com o Painel, o acompanhamento ganha rotina, registro e valor claros.</p></div><div><p class="sub">Bullets</p><ul><li>Formato definido de acompanhamento</li><li>Registro do que foi entregue</li><li>Valor mensal fácil de explicar</li></ul></div><div><span class="btn">Agendar demonstração</span></div></div><div class="ad-ref"><img src="ref/e08.jpg" alt="Referência do anúncio 8" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e9"><div class="ad-main"><div><span class="num">Anúncio 9</span></div><div><p class="sub">Título</p><p class="headline">Cobre pelo acompanhamento que você já faz, <mark>sem sentir culpa</mark>.</p></div><div><p class="sub">Corpo</p><p style="margin:0">Em 30 minutos você vê como transformar o cuidado entre consultas em serviço mensal, com a Band e o Painel Médico.</p></div><div><p class="sub">Bullets</p><ul><li>Cuidado entre consultas com formato</li><li>Dados reais para sustentar o valor</li><li>Serviço mensal claro</li></ul></div><div><span class="btn">Quero participar</span></div></div><div class="ad-ref"><img src="ref/e09.jpg" alt="Referência do anúncio 9" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e10"><div class="ad-main"><div><span class="num">Anúncio 10</span></div><div><p class="sub">Título</p><p class="headline">Todo consultório tem consultas. A pergunta é: o seu tem <mark>recorrência</mark>?</p></div><div><p class="sub">Corpo</p><p style="margin:0">Acompanhamento planejado, com Band e Painel, para o paciente continuar com você e a clínica crescer com previsibilidade.</p></div><div><p class="sub">Bullets</p><ul><li>Acompanhamento planejado</li><li>Paciente que continua com você</li><li>Mais previsibilidade para a clínica</li></ul></div><div><span class="btn">Quero ver como funciona</span></div></div><div class="ad-ref"><img src="ref/e10.jpg" alt="Referência do anúncio 10" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e11"><div class="ad-main"><div><span class="num">Anúncio 11</span></div><div><p class="sub">Título</p><p class="headline">Em 30 minutos, eu mostro como o seu consultório pode acompanhar cada paciente o ano inteiro.</p></div><p>Assinatura: [NOME REAL E CARGO DE QUEM FALA]</p><div><p class="sub">Bullets</p><ul><li>Demonstração de 30 minutos</li><li>Band e Painel Médico ao vivo</li><li>Sem compromisso</li></ul></div><div><span class="btn">Quero a demonstração com [NOME]</span></div></div><div class="ad-ref"><img src="ref/e11.jpg" alt="Referência do anúncio 11" width="480" height="600" loading="lazy"></div></article>
+<article class="ad" id="e12"><div class="ad-main"><div><span class="num">Anúncio 12</span></div><div><p class="sub">Título</p><p class="headline">[NÚMERO REAL] médicos já acompanham o paciente além da consulta.</p><p class="dur" style="margin:8px 0 0">Alternativa (versão sem número): Quem acompanha o paciente entre as consultas não perde ele depois da primeira.</p></div><div><p class="sub">Corpo</p><p style="margin:0">Todos começaram achando que o WhatsApp bastava.</p></div><div><p class="sub">Bullets</p><ul><li>Paciente acompanhado entre consultas</li><li>Dados reais no Painel</li><li>Serviço mensal</li></ul></div><div><span class="btn">Quero fazer parte</span></div></div><div class="ad-ref"><img src="ref/e12.jpg" alt="Referência do anúncio 12" width="480" height="600" loading="lazy"></div></article>
+</main>
 </body>
 </html>
